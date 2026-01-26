@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRACE - Multimodal RAG</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- PDF.js for PDF viewing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">◈</span>
+                <span class="logo-text">TRACE</span>
+            </div>
+            <div class="header-actions">
+                <label class="upload-btn">
+                    <input type="file" id="file-input" accept=".pdf,.docx,.txt,.md,.jpg,.jpeg,.png,.gif,.mp3,.wav,.mp4,.mkv" multiple>
+                    <span>📁 Upload</span>
+                </label>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Chat Area -->
+            <section class="chat-section">
+                <div id="chat-messages" class="chat-messages">
+                    <div class="welcome-message">
+                        <h2>Welcome to TRACE</h2>
+                        <p>Upload documents, images, audio, or video files and ask questions.</p>
+                        <p>All answers are grounded in evidence with clickable citations.</p>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <input 
+                        type="text" 
+                        id="chat-input" 
+                        placeholder="Ask a question about your documents..."
+                        autocomplete="off"
+                    >
+                    <button id="send-btn" class="send-btn">
+                        <span>→</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right Sidebar: Obsidian Settings + Evidence Panel -->
+            <aside class="right-sidebar">
+                <!-- Obsidian Settings Section -->
+                <div class="obsidian-settings-panel">
+                    <div class="settings-header">OBSIDIAN (OPTIONAL)</div>
+                    
+                    <div class="setting-field">
+                        <label>OBSIDIAN_API_KEY</label>
+                        <div class="input-group">
+                            <input type="password" id="obsidian-api-key" placeholder="Leave empty to disable">
+                            <button type="button" class="toggle-btn" onclick="togglePassword('obsidian-api-key')">
+                                <span class="eye-icon">👁️</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-field">
+                        <label>OBSIDIAN_API_URL</label>
+                        <input type="text" id="obsidian-api-url" value="http://localhost:27123">
+                    </div>
+                    
+                    <button class="save-btn" onclick="saveObsidianSettings()">💾 Save Settings</button>
+                    
+                    <div class="export-divider"></div>
+                    
+                    <div class="export-buttons">
+                        <button class="export-action-btn" onclick="exportAsMarkdown()">📄 Download Markdown</button>
+                        <button class="export-action-btn" onclick="saveToObsidian()">🔗 Save to Obsidian</button>
+                    </div>
+                </div>
+
+                <!-- Evidence Panel -->
+                <div class="evidence-panel" id="evidence-panel">
+                <div class="panel-header">
+                    <h3>Evidence</h3>
+                    <button id="close-panel" class="close-btn">×</button>
+                </div>
+                <div id="evidence-list" class="evidence-list">
+                    <p class="placeholder">Citations will appear here when you ask a question.</p>
+                </div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Viewer Modal -->
+        <div id="viewer-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span id="modal-title">Evidence Viewer</span>
+                    <button id="close-modal" class="close-btn">×</button>
+                </div>
+                <div id="modal-body" class="modal-body">
+                    <!-- Content loaded dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Upload Progress -->
+        <div id="upload-progress" class="upload-progress hidden">
+            <div class="progress-content">
+                <div class="spinner"></div>
+                <span id="progress-text">Uploading...</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

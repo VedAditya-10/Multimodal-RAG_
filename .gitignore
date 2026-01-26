@@ -1,0 +1,37 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Environment
+.env
+
+# Data
+data/*
+!data/.gitkeep
+frames/*
+!frames/.gitkeep
+
+# LanceDB
+*.lance/
+lancedb/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temp
+*.tmp
+/tmp/
