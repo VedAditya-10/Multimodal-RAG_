@@ -1,17 +1,17 @@
-# CHAKRAVYUH
 
-**Multimodal RAG with Universal Evidence Citing**
 
-A responsible RAG system that handles ambiguity, adapts retrieval, and acknowledges uncertainty. Built for the CHAKRAVYUH 1.0 hackathon.
+# Multimodal RAG with Universal Evidence Citing
+
+A RAG system that handles ambiguity, adapts retrieval, and acknowledges uncertainty.
 
 ## Features
 
-- 📄 **Multimodal Ingestion**: PDF, DOCX, Markdown, Images, Audio, Video
-- 🔍 **Cross-Modal Retrieval**: Search across all modalities
-- 📎 **Universal Citations**: Every answer grounded in evidence
-- ⚠️ **Conflict Detection**: LLM-based contradiction identification
-- 🛡️ **Hallucination Guard**: Refuses when confidence is low
-- 📤 **Obsidian Export**: Linked notes for audit trail
+- **Multimodal Ingestion**: PDF, DOCX, Markdown, Images, Audio, Video
+- **Cross-Modal Retrieval**: Search across all modalities
+- **Universal Citations**: Every answer grounded in evidence
+- **Conflict Detection**: LLM-based contradiction identification
+- **Hallucination Guard**: Refuses when confidence is low
+- **Obsidian Export**: Linked notes for audit trail
 
 ## Quick Start
 
@@ -134,6 +134,3 @@ Confidence score based on 4 factors:
 - Below 0.4 → Refuse to answer
 - Below 0.6 → Show warning
 
-## License
-
-MIT
