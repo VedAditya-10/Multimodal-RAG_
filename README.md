@@ -114,8 +114,8 @@ uvicorn main:app --reload --port 8000
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `OPENROUTER_API_KEY` | - | Required. Get from openrouter.ai |
-| `PRIMARY_MODEL` | claude-3.5-sonnet | Main LLM for answers |
-| `FAST_MODEL` | gpt-4o-mini | Fast model for conflict detection |
+| `PRIMARY_MODEL` | gemini flash 2.0 lite | Main LLM for answers |
+| `FAST_MODEL` | gpt oss 120B | Fast model for conflict detection |
 | `MAX_VIDEO_SIZE_MB` | 100 | Max video file size |
 | `MAX_VIDEO_DURATION_SEC` | 600 | Max video length (10 min) |
 
