@@ -42,7 +42,6 @@ sudo apt install ffmpeg
 ### 3. Setup
 
 ```bash
-cd chakravyuh
 
 # Create virtual environment
 python -m venv venv
@@ -54,7 +53,7 @@ pip install -r requirements.txt
 
 # Configure environment
 copy .env.example .env
-# Edit .env and add your OPENROUTER_API_KEY
+# Edit .env and add your OPENROUTER_API_KEY OR USE LOCAL LLM
 ```
 
 ### 4. Run
